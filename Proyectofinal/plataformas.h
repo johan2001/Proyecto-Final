@@ -1,9 +1,9 @@
 #ifndef PLATAFORMAS_H
 #define PLATAFORMAS_H
 
-#include <QObject>
+#include "librerias.h"
 
-class Plataformas
+class Plataformas : public QObject, public QGraphicsItem
 {
     Q_OBJECT
 public:

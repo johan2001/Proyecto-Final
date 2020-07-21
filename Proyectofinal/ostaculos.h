@@ -2,6 +2,7 @@
 #define OSTACULOS_H
 
 #include <QWidget>
+#include "librerias.h"
 
 namespace Ui {
 class Ostaculos;

@@ -2,12 +2,13 @@
 #define JEFEFINAL_H
 
 #include <QWidget>
+#include "librerias.h"
 
 namespace Ui {
 class Jefefinal;
 }
 
-class Jefefinal : public QWidget
+class Jefefinal : public QObject, public QGraphicsItem
 {
     Q_OBJECT
 

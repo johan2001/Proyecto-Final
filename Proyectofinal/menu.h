@@ -2,6 +2,8 @@
 #define MENU_H
 
 #include <QWidget>
+#include "juego.h"
+#include "multijugador.h"
 
 namespace Ui {
 class Menu;
@@ -14,6 +16,13 @@ class Menu : public QWidget
 public:
     explicit Menu(QWidget *parent = nullptr);
     ~Menu();
+
+private slots:
+    void on_pushButton_clicked();
+
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::Menu *ui;

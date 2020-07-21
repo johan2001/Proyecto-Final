@@ -2,6 +2,7 @@
 #define MULTIJUGADOR_H
 
 #include <QWidget>
+#include "librerias.h"
 
 namespace Ui {
 class Multijugador;

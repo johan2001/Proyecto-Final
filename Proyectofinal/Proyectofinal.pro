@@ -19,13 +19,13 @@ SOURCES += \
     enemigos.cpp \
     findeljuego.cpp \
     iniciodesesion.cpp \
-    jefefinal.cpp \
+    jefe_final.cpp \
     jugador.cpp \
     main.cpp \
     juego.cpp \
     menu.cpp \
     multijugador.cpp \
-    ostaculos.cpp \
+    obstacuos.cpp \
     plataformas.cpp \
     poderes.cpp \
     puntaje.cpp \
@@ -35,12 +35,13 @@ HEADERS += \
     enemigos.h \
     findeljuego.h \
     iniciodesesion.h \
-    jefefinal.h \
+    jefe_final.h \
     juego.h \
     jugador.h \
+    librerias.h \
     menu.h \
     multijugador.h \
-    ostaculos.h \
+    obstacuos.h \
     plataformas.h \
     poderes.h \
     puntaje.h \
@@ -49,11 +50,9 @@ HEADERS += \
 FORMS += \
     findeljuego.ui \
     iniciodesesion.ui \
-    jefefinal.ui \
     juego.ui \
     menu.ui \
-    multijugador.ui \
-    ostaculos.ui
+    multijugador.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

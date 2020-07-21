@@ -1,9 +1,9 @@
 #ifndef PODERES_H
 #define PODERES_H
 
-#include <QObject>
+#include "librerias.h"
 
-class Poderes
+class Poderes : public QObject, public QGraphicsItem
 {
     Q_OBJECT
 public:

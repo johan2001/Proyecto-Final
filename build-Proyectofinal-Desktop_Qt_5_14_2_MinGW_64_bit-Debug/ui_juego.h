@@ -11,9 +11,8 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -22,23 +21,19 @@ class Ui_Juego
 {
 public:
     QWidget *centralwidget;
-    QMenuBar *menubar;
-    QStatusBar *statusbar;
+    QGraphicsView *graphicsView;
 
     void setupUi(QMainWindow *Juego)
     {
         if (Juego->objectName().isEmpty())
             Juego->setObjectName(QString::fromUtf8("Juego"));
-        Juego->resize(800, 600);
+        Juego->resize(1200, 600);
         centralwidget = new QWidget(Juego);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        graphicsView = new QGraphicsView(centralwidget);
+        graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
+        graphicsView->setGeometry(QRect(0, 0, 1200, 600));
         Juego->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(Juego);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        Juego->setMenuBar(menubar);
-        statusbar = new QStatusBar(Juego);
-        statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        Juego->setStatusBar(statusbar);
 
         retranslateUi(Juego);
 
@@ -47,7 +42,7 @@ public:
 
     void retranslateUi(QMainWindow *Juego)
     {
-        Juego->setWindowTitle(QCoreApplication::translate("Juego", "Juego", nullptr));
+        Juego->setWindowTitle(QCoreApplication::translate("Juego", "MainWindow", nullptr));
     } // retranslateUi
 
 };
