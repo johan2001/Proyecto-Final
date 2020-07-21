@@ -7,17 +7,29 @@ Juego::Juego(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    //se incia el tiempo
     startTimer(2000/60);
 
+    //creo un scena y la agrego a un graphicsView
     scene = new QGraphicsScene(this);
     scene->setSceneRect(0,0,1200,600);
     ui->graphicsView->setScene(scene);
     ui->graphicsView->setBackgroundBrush(QImage("").scaled(1200,600)); //Intoducir fondo
 
+    //Recorre la matriz del mapa y agregas los objetos
     for (int i=0;i<15;i++) {
         for (int j=0;j<38;j++) {
         }
     }
+
+    //creo un jugador y lo agrego a la ecena
+    jugador=new Jugador(0,0); // le doy los valores de x y y
+    scene->addItem(jugador);
+
+    //Inici el tipo de la colociones
+    timerColisiones=new QTimer;
+    connect(timerColisiones,SIGNAL(timeout()),this,SLOT(colisiones()));
+    timerColisiones->start(1);
 
 }
 Juego::~Juego()
@@ -39,7 +51,18 @@ void Juego::keyReleaseEvent(QKeyEvent *event)
 
 void Juego::timerEvent(QTimerEvent *)
 {
+    if(keys[Qt::Key_A]){
+        jugador->Mover_iz();
+    }
 
+    if(keys[Qt::Key_D]){
+        jugador->Mover_De();
+    }
+
+    if(keys[Qt::Key_Space]){
+        jugador->salto();
+
+    }
 }
 void Juego::colisiones()
 {

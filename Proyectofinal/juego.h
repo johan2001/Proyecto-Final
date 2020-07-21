@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include "librerias.h"
-
+#include "jugador.h"
 
 
 namespace Ui {
@@ -15,6 +15,8 @@ class Juego : public QMainWindow
     Q_OBJECT
 private:
     Ui::Juego *ui;
+    //creacion de variables necearias
+    Jugador *jugador;
     QGraphicsScene *scene;
     QMap<int,bool> keys;
 
@@ -53,14 +55,17 @@ private:
 
 
 public:
+    //Construtor de la clase
     explicit Juego(QWidget *parent = nullptr);
+    //carturar el los eventos del teclado
     void keyPressEvent(QKeyEvent *event);
     void keyReleaseEvent(QKeyEvent *event);
     void timerEvent(QTimerEvent *);
-
+    //desctructor de la clase
     ~Juego();
 
 public slots:
+    //funcion que controlara todas las coliciones del juego
     void colisiones();
 
 };
